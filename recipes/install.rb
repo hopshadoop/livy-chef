@@ -9,6 +9,10 @@
 
 include_recipe "java"
 
+if node.attribute?('hops') == false
+   raise "You need to define at least one hops attribute for any host with Livy installed"
+end  
+
 my_ip = my_private_ip()
 
 hops_groups()

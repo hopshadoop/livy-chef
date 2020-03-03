@@ -1,7 +1,7 @@
 include_attribute "kagent"
 
 default['livy']['user']                    = node['install']['user'].empty? ? "livy" : node['install']['user']
-default['livy']['group']                   = node['install']['user'].empty? ? node['hadoop_spark']['group'] : node['install']['user']
+default['livy']['group']                   = node['install']['user'].empty? ? node['hops']['group'] : node['install']['user']
 
 default['livy']['version']                 = "0.6.1.2-bin"
 default['livy']['url']                     = "#{node['download_url']}/apache-livy-#{node['livy']['version']}.zip"
